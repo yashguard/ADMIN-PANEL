@@ -1,5 +1,13 @@
 const adminHome = (req, res) => {
-  res.render("index")
+  res.render("index");
 };
 
-module.exports = { adminHome };
+const adminLogin = (req, res) => {
+  res.render("login");
+};
+
+const adminRegister = (req, res) => {
+  res.render("register");
+};
+
+module.exports = { adminHome, adminLogin, adminRegister };

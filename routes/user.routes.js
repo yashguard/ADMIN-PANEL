@@ -1,7 +1,9 @@
 const { Router } = require("express");
-const { adminHome } = require("../controllers/user.controller");
+const { adminHome, adminLogin, adminRegister } = require("../controllers/user.controller");
 let routes = Router();
 
 routes.get("/", adminHome)
+routes.get("/login", adminLogin)
+routes.get("/register", adminRegister)
 
 module.exports = routes

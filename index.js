@@ -2,9 +2,10 @@ const express = require("express");
 const routes = require("./routes/user.routes");
 const server = express();
 const cors = require("cors");
+const connect = require("./config/db");
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
-require("dotenv").config({ path: "./config/.env" });
+require("dotenv").config();
 let port = process.env.PORT;
 server.use(routes);
 server.use(cors());
@@ -14,4 +15,5 @@ server.use(express.static(__dirname + "/public"));
 
 server.listen(port, () => {
   console.log("Server listening on port " + port);
+  connect();
 });
